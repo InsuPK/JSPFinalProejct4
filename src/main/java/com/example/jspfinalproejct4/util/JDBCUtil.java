@@ -8,7 +8,7 @@ public class JDBCUtil {
 	    Connection con=null;  
 	    try{  
 	        Class.forName("com.mysql.jdbc.Driver");  
-	        con= DriverManager.getConnection("jdbc:mysql://db4free.net:3306/dbname","dbid","idpwd");  
+	        con= DriverManager.getConnection("jdbc:mysql://walab.handong.edu:3306/p2_22000292","p2_22000292","ohdeeL7ohf");
 	    }catch(Exception e){
 	    	System.out.println(e);
 	    }  

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="com.example.jspfinalproejct4.dao.BoardDAO"%>
+<%@page import="com.example.jspfinalproejct4.dao.BoardDAO, com.example.jspfinalproejct4.util.FileUpload"%>
+<%@ page import="java.io.File" %>
+<%@ page import="com.example.jspfinalproejct4.bean.BoardVO" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
 
@@ -9,7 +11,9 @@
 
 <%
 	BoardDAO boardDAO = new BoardDAO();
-	int i = boardDAO.insertBoard(u);
+	FileUpload upload = new FileUpload();
+	BoardVO U = upload.uploadPhoto(request);
+	int i = boardDAO.insertBoard(U);
 	String msg = "데이터 추가 성공 !";
 	if(i == 0) msg = "[에러] 데이터 추가 ";
 %>
